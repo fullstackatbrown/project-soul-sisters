@@ -1,6 +1,5 @@
-export default function About() {
+export default function Donate() {
     return (
       <div></div>
     );
   }
-  
