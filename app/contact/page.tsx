@@ -18,6 +18,16 @@ export default function Contact() {
   }
 
   return <div>
+
+    <h1>Contact Us More quickly</h1>
+    <h3>This will ultimately live on the hero page or smth</h3>
+    <form action="https://icloud.us11.list-manage.com/subscribe/post" method="POST">
+      <input type="hidden" name="u" value="b1419b80582cb88b5e7249fc0"></input>
+      <input type="hidden" name="id" value="ccd3919900"></input>
+    <input type="email" name="MERGE0" id="MERGE0"></input>
+    <button>Subscribe</button>
+    </form>
+
     <h1>Contact Us</h1>
     <form onSubmit={submitHandler}>
       <div>
@@ -50,3 +60,4 @@ export default function Contact() {
     </form>
   </div>;
 }
+
