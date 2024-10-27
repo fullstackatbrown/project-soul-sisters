@@ -31,8 +31,7 @@ export default function Contact() {
 
   return <div>
 
-    <h1>Contact Us More quickly</h1>
-    <h3>This will ultimately live on the hero page or smth</h3>
+    <h1 className="font-size:1.5rem">Contact Us</h1>
     <form action="https://icloud.us11.list-manage.com/subscribe/post" method="POST">
       <input type="hidden" name="u" value={MAILCHIMP_U} ></input>
       <input type="hidden" name="id" value={MAILCHIMP_ID} ></input>
@@ -42,7 +41,8 @@ export default function Contact() {
 
     <hr/>
 
-    <h1>Contact Us</h1>
+    <h1>We'd Love to Hear From You!</h1>
+    <p className="subtitle">Whether it's about joining our team, feedback, or general inquiries, we want to know.</p>
     <form onSubmit={submitHandler}>
       <div>
         <label htmlFor="email">Email</label>
@@ -50,17 +50,27 @@ export default function Contact() {
           value={email} onChange={e => setEmail(e.target.value)} />
       </div>
 
-      <div>
+      {/* <div>
         <label htmlFor="subject">Subject</label>
         <input type="text" name="subject" required
           value={subject} onChange={e => setSubject(e.target.value)} />
-      </div>
+      </div> */}
+
+      <label htmlFor="subject">Subject</label>
+      <select id="subject" name="subject" onChange={e => setSubject(e.target.value)} required>
+          <option value="">Select a subject</option>
+          <option value="join">Joining the Team</option>
+          <option value="feedback">Giving Feedback</option>
+          <option value="inquiry">General Inquiry</option>
+          <option value="other">Other</option>
+        </select>     
 
       <div>
         <label htmlFor="body">Message</label>
         <textarea name="body"
           value={body} onChange={e => setBody(e.target.value)} />
       </div>
+
 
       <div>
         {/* Is this unethical */}
@@ -72,6 +82,12 @@ export default function Contact() {
 
       <input type="submit" value="Send" />
     </form>
+
+    <hr/>
+
+    <div className="blurb">
+      <p>We're located at _____</p>
+    </div>
   </div>;
 }
 
