@@ -1,7 +1,6 @@
 const ContactForm = () => {
     return (
         <div>
-            <body>
                 <div className="container">
                     <header>
                         <h1>We'd Love to Hear From You!</h1>
@@ -48,7 +47,6 @@ const ContactForm = () => {
                     <a href="###">check out some other ways you can get involved!</a>
                 </div>
                 </div>
-            </body>
         </div>
     );
 };
