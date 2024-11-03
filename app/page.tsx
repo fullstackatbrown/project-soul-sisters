@@ -1,9 +1,4 @@
-import { createBucketClient } from "@cosmicjs/sdk";
-
-const cosmic = createBucketClient({
-  bucketSlug: process.env.BUCKET_SLUG || "",
-  readKey: process.env.BUCKET_READ_KEY || "",
-});
+import cosmic from "../lib/cosmicClient";
 
 export default async function Home() {
   let data = await cosmic.objects
