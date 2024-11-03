@@ -14,27 +14,25 @@ const routes = [
 
 export default function Navbar() {
   const pathname = usePathname();
-
-  return (
-    <nav className={styles.navbar}>
-      <div className={styles["navbar-container"]}>
-        <Link href="/" className={styles["navbar-logo"]}>
-          Soul Sisters
-        </Link>
-        <div className={styles.menu}>
-          {routes.map((route) => (
-            <Link
-              key={route.href}
-              href={route.href}
-              className={`${styles["nav-link"]} ${
-                styles[pathname === route.href ? "active" : ""]
-              }`}
-            >
-              {route.label}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </nav>
-  );
+    return (
+        <nav className={styles.navbar}>
+            <div className={styles["navbar-container"]}>
+                <div className={styles.menu}>
+                    {routes.map((route) => (
+                        <Link
+                            key={route.href}
+                            href={route.href}
+                            className={`${styles["nav-link"]} ${styles[pathname === route.href ? "active" : ""]}`}
+                        >
+                            {route.label}
+                        </Link>
+                    ))}
+                </div>
+                <Link href="/" className={styles["navbar-logo"]}>
+                    Soul Sisters
+                </Link>
+                
+            </div>
+        </nav>
+    );
 }
