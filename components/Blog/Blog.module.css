@@ -1,4 +1,4 @@
-/* Container for the blog */
+Container for the blog
 .blog-container {
     display: flex;
     flex-direction: column;
@@ -42,4 +42,14 @@
     .blog-container {
         max-width: 100%;
     }
+}
+
+.imageWrapper {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.imageWrapper:hover {
+    transform: scale(1.05);
 }
