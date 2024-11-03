@@ -18,9 +18,6 @@ export default function Navbar() {
     return (
         <nav className={styles.navbar}>
             <div className={styles["navbar-container"]}>
-                <Link href="/" className={styles["navbar-logo"]}>
-                    Soul Sisters
-                </Link>
                 <div className={styles.menu}>
                     {routes.map((route) => (
                         <Link
@@ -32,6 +29,10 @@ export default function Navbar() {
                         </Link>
                     ))}
                 </div>
+                <Link href="/" className={styles["navbar-logo"]}>
+                    Soul Sisters
+                </Link>
+                
             </div>
         </nav>
     )
