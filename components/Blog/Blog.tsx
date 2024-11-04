@@ -26,7 +26,7 @@
 
 import { useState } from 'react';
 import Modal from '@/components/Modal/Modal';
-import styles from './blog.module.css';
+import styles from './Blog.module.css';
 
 interface BlogProps {
     title: string;
