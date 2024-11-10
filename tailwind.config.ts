@@ -11,7 +11,13 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "figma1": '#000000',
+        "figma2": '787878',
+        "figma3": 'd9d9d9',
       },
+      fontFamily: {
+        alexandria: ['Alexandria', 'sans-serif']
+      }
     },
   },
   plugins: [],

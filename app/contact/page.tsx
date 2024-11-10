@@ -30,10 +30,10 @@ export default function Contact() {
   }
 
   return <div>
-    <div className="min-h-screen flex flex-col items-center bg-gray-990 text-gray-300 py-3 px-4">
+    <div className="min-h-screen flex flex-col bg-customBlack items-center text-gray-300 pb-3 pt-6 px-4">
       {/* Header Section */}
-      <h1 className="text-5xl font-semibold text-white mb-2">Get Involved</h1>
-      <p className="text-center text-gray-400 max-w-md">
+      <h1 className="text-5xl font-semibold text-white mb-2 font-alexandria">Get Involved</h1>
+      <p className="text-center text-gray-400 max-w-xl">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       </p>
 
@@ -54,7 +54,7 @@ export default function Contact() {
         </div>
         <div className="flex items-center space-x-3 pt-8 pb-8">
          <FaEnvelope className="text-white" />
-          <span>awesome@gmail.com</span>
+          <a href="mailto:PLACEHOLDER@PLEASECHANGE@IMPORTANT.COM"><span>awesome@gmail.com</span></a>
         </div>
         <div className="flex items-center space-x-3">
         <FaMapMarkerAlt className="text-white" />
@@ -67,17 +67,18 @@ export default function Contact() {
     <div className="bg-zinc-800 rounded-3xl p-6 w-full md:w-1/2 space-y-6">
       <div>
         <label htmlFor="name" className="text-zinc-400">Your name</label>
-        <input id="name" type="text" className="w-full bg-zinc-700 text-white rounded-md border-none focus:ring-2 focus:ring-zinc-600 p-2 mt-1" />
+        <input id="name" type="text" name="subject" required value={subject} onChange={e => setSubject(e.target.value)} className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1" />
       </div>
       <div>
         <label htmlFor="email" className="text-zinc-400">Your email</label>
-        <input id="email" type="email" className="w-full bg-zinc-700 text-white rounded-md border-none focus:ring-2 focus:ring-zinc-600 p-2 mt-1" />
+        <input id="email" type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1" />
       </div>
       <div className="pb-20">
         <label htmlFor="message" className="text-zinc-400">Tell us more about yourself</label>
-        <textarea id="message" className="w-full bg-zinc-700 text-white rounded-md border-none focus:ring-2 focus:ring-zinc-600 p-2 mt-1"></textarea>
+        <textarea name="body"
+          value={body} onChange={e => setBody(e.target.value)} id="message" className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1"></textarea>
       </div>
-      <button className="w-full bg-zinc-700 text-white font-semibold py-2 rounded-md hover:bg-zinc-600 transition">Get involved</button>
+      <button className="w-full bg-zinc-700 text-white font-semibold py-2 rounded-3xl hover:bg-zinc-600 transition">Get involved</button>
     </div>
     
   </div>
