@@ -53,27 +53,27 @@ export default function InvolvementCheckboxes(props: Props) {
 
   return <>
     <div>
-      <input id="film-prod" type="checkbox" checked={props.flags.filmProd} onChange={setFilmProd}/>
+      <input id="film-prod" type="checkbox" onChange={setFilmProd}/>
       <label htmlFor="film-prod">Film Production</label>
     </div>
     <div>
-      <input id="performing" type="checkbox" checked={props.flags.performing} onChange={setPerforming} />
+      <input id="performing" type="checkbox" onChange={setPerforming} />
       <label htmlFor="performing">Performing</label>
     </div>
     <div>
-      <input id="social-media" type="checkbox" checked={props.flags.socialMedia} onChange={setSocialMedia} />
+      <input id="social-media" type="checkbox" onChange={setSocialMedia} />
       <label htmlFor="social-media">Social Media</label>
     </div>
     <div>
-      <input id="music" type="checkbox" checked={props.flags.music} onChange={setMusic} />
+      <input id="music" type="checkbox" onChange={setMusic} />
       <label htmlFor="music">Music</label>
     </div>
     <div>
-      <input id="support" type="checkbox" checked={props.flags.support} onChange={setSupport} />
+      <input id="support" type="checkbox" onChange={setSupport} />
       <label htmlFor="support">Support</label>
     </div>
     <div>
-      <input id="other" type="checkbox" checked={props.flags.other} onChange={setOther} />
+      <input id="other" type="checkbox" onChange={setOther} />
       <label htmlFor="other">Other</label>
     </div>
   </>;
