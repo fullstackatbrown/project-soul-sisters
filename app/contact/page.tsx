@@ -1,7 +1,8 @@
 'use client'
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import InvolvementCheckboxes, { InvolvementFlags } from "./InvolvementCheckboxes";
 const MAILCHIMP_U = "b1419b80582cb88b5e7249fc0";
 const MAILCHIMP_ID = "ccd3919900";
 
@@ -10,6 +11,18 @@ export default function Contact() {
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [newsletter, setNewsletter] = useState(false);
+  const [flags, setFlags] = useState<InvolvementFlags>({
+    filmProd: false,
+    performing: false,
+    socialMedia: false,
+    music: false,
+    support: false,
+    other: false,
+  });
+
+  const setFlagsHandler = useCallback((newFlags: InvolvementFlags) => {
+    setFlags(newFlags);
+  }, [setFlags]);
 
   function submitHandler(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -73,11 +86,18 @@ export default function Contact() {
         <label htmlFor="email" className="text-zinc-400">Your email</label>
         <input id="email" type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1" />
       </div>
-      <div className="pb-20">
+
+      <div>
         <label htmlFor="message" className="text-zinc-400">Tell us more about yourself</label>
         <textarea name="body"
           value={body} onChange={e => setBody(e.target.value)} id="message" className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1"></textarea>
       </div>
+
+      <div className="pb-20">
+        <label htmlFor="message" className="text-zinc-400">How Do You Want to Get Involved?</label>
+        <InvolvementCheckboxes flags={flags} setFlags={setFlagsHandler} />
+      </div>
+
       <button className="w-full bg-zinc-700 text-white font-semibold py-2 rounded-3xl hover:bg-zinc-600 transition">Get involved</button>
     </div>
     
