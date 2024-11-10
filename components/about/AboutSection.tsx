@@ -3,12 +3,8 @@ import styles from '@/components/Navbar/Navbar.module.css'
 
 const AboutSection = () => {
     return (
-        <div className="min-h-screen bg-black flex-row text-white">
-            {/** INSERT CORRECTED NAVBAR COMPONENTS */}
-            {/** <Navbar/> */}
-            {/** 5/6 ASSUMES THAT NAVBAR TAKES UP 1/6 OF PAGE */}
-            <Navbar/>
-            <div className="w-5/6 flex-row p-8">
+        <div className="min-h-screen bg-black flex justify-center text-white">
+            <div className="max-w-screen-lg flex p-8 space-x-4">
                 <div className="w-3/5 pr-4">
                     <p className="leading-relaxed">INSERT TEXT HERE</p>
                 </div>
