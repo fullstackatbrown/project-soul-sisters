@@ -138,7 +138,7 @@ const cosmic = createBucketClient({
 You may see the code above when reading the doc. However, all we have to do is
 
 ```javascript
-import client from "<PATH TO cosmicClient.JS";
+import cosmic from "<PATH TO cosmicClient.JS";
 ```
 
 since we already do this for you in `lib/cosmicClient.js`
