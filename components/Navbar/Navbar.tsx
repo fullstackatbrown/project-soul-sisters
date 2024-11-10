@@ -1,26 +1,22 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import styles from "./NavBar.module.css"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "./Navbar.module.css";
 
 const routes = [
-    { href: "/about", label: "About" },
-    { href: "/news", label: "News" },
-    { href: "/contact", label: "Contact" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/donate", label: "Donate" },
-]
+  { href: "/about", label: "About" },
+  { href: "/news", label: "News" },
+  { href: "/contact", label: "Contact" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/donate", label: "Donate" },
+];
 
 export default function Navbar() {
-    const pathname = usePathname()
-
+  const pathname = usePathname();
     return (
         <nav className={styles.navbar}>
             <div className={styles["navbar-container"]}>
-                <Link href="/" className={styles["navbar-logo"]}>
-                    Soul Sisters
-                </Link>
                 <div className={styles.menu}>
                     {routes.map((route) => (
                         <Link
@@ -32,7 +28,11 @@ export default function Navbar() {
                         </Link>
                     ))}
                 </div>
+                <Link href="/" className={styles["navbar-logo"]}>
+                    Soul Sisters
+                </Link>
+                
             </div>
         </nav>
-    )
+    );
 }
