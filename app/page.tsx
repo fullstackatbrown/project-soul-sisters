@@ -16,7 +16,6 @@ export default async function Home() {
       <video
         src={response.object.metadata.video.url}
         autoPlay
-        muted
         loop
         playsInline
       />
