@@ -1,0 +1,58 @@
+/* teampage.module.css */
+
+/* Container for TeamPage */
+.teamContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* TeamPage Image */
+.imageWrapper {
+    width: 100%;
+    max-height: 250px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.imageWrapper:hover {
+    transform: scale(1.05);
+}
+
+/* TeamPage Content */
+.content {
+    padding: 15px;
+}
+
+.title {
+    font-size: 20px; /* Smaller font for title */
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.textContent {
+    font-size: 14px; /* Smaller font for content */
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .teamContainer {
+        max-width: 100%;
+    }
+}
