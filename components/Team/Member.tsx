@@ -10,8 +10,8 @@ export default function Member({ role, name, imageUrl }: MemberProps) {
   return (
     <div className={styles.teamMember}>
       <div className={styles.memberLeft}>
-        <div>{role}</div>
-        <div>{name}</div>
+        <p>{role}</p>
+        <p>{name}</p>
       </div>
       <img src={imageUrl} className={styles.memberPhoto} />
     </div>

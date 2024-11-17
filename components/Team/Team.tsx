@@ -13,7 +13,7 @@ export default async function Team() {
 
   return (
     <div className={styles.teamContainer}>
-      <div className={styles.teamTitle}>Production Team</div>
+      <h1 className={styles.teamTitle}>Production Team</h1>
       <div className={styles.teamMembers}>
         {data.objects.map((member: any, i: number) => (
           <Member
