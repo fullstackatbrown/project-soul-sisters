@@ -47,12 +47,25 @@ export default function Contact() {
       params.append("MERGE0", email);
       params.append("MERGE1", subject); // This is actually just name
       params.append("MERGE2", body);
-      // params.append("group[32172][1]", filmProd);
-      // params.append("group[32172][2]", performing);
-      // params.append("group[32172][3]", socialMedia);
-      // params.append("group[32172][4]", music);
-      // params.append("group[32172][5]", support);
-      params.append("group[32172][6]", other);
+
+      if(filmProd) {
+        params.append("group[32172][1]", "1");
+      }
+      if(performing) {
+        params.append("group[32172][2]", "1");
+      }
+      if(socialMedia) {
+        params.append("group[32172][4]", "1");
+      }
+      if(music) {
+        params.append("group[32172][8]", "1");
+      }
+      if(support) {
+        params.append("group[32172][16]", "1");
+      }
+      if(other) {
+        params.append("group[32172][32]", "1");
+      }
   
       // // Map flags to their corresponding MailChimp group parameters
       // Object.entries(flags).forEach(([key, value], index) => {
