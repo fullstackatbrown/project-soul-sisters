@@ -6,41 +6,87 @@ import InvolvementCheckboxes, { InvolvementFlags } from "./InvolvementCheckboxes
 const MAILCHIMP_U = "b1419b80582cb88b5e7249fc0";
 const MAILCHIMP_ID = "ccd3919900";
 
+
+  // Function to handle text change
+  
+
+
 export default function Contact() {
+  const [submitText, setSubmitText] = useState("Get Involved")  
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [newsletter, setNewsletter] = useState(false);
-  const [flags, setFlags] = useState<InvolvementFlags>({
-    filmProd: false,
-    performing: false,
-    socialMedia: false,
-    music: false,
-    support: false,
-    other: false,
-  });
+  const [filmProd, setFilmProd] = useState(false);
+  const [performing, setPerforming] = useState(false);
+  const [socialMedia, setSocialMedia] = useState(false);
+  const [music, setMusic] = useState(false);
+  const [support, setSupport] = useState(false);
+  const [other, setOther] = useState(false);
 
-  const setFlagsHandler = useCallback((newFlags: InvolvementFlags) => {
-    setFlags(newFlags);
-  }, [setFlags]);
+  // const [flags, setFlags] = useState<InvolvementFlags>({
+  //   filmProd: false,
+  //   performing: false,
+  //   socialMedia: false,
+  //   music: false,
+  //   support: false,
+  //   other: false,
+  // });
+
+  // const setFlagsHandler = useCallback((newFlags: InvolvementFlags) => {
+  //   setFlags(newFlags);
+  // }, [setFlags]);
 
   function submitHandler(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
-    window.location.assign("mailto:dummy@example.com?subject=" + subject + "&body="+ body);
-
-    if(!newsletter) {
+  
+    if (!newsletter) {
       const params = new URLSearchParams();
       params.append("u", MAILCHIMP_U);
       params.append("id", MAILCHIMP_ID);
       params.append("MERGE0", email);
+      params.append("MERGE1", subject); // This is actually just name
+      params.append("MERGE2", body);
+      // params.append("group[32172][1]", filmProd);
+      // params.append("group[32172][2]", performing);
+      // params.append("group[32172][3]", socialMedia);
+      // params.append("group[32172][4]", music);
+      // params.append("group[32172][5]", support);
+      params.append("group[32172][6]", other);
+  
+      // // Map flags to their corresponding MailChimp group parameters
+      // Object.entries(flags).forEach(([key, value], index) => {
+      //   // Convert the boolean to a string ("true" or "false")
+      //   params.append(`group[32172][${index + 1}]`, value.toString());
+      //   console.log(value);
+      //   console.log(key);
+      // });
+  
+      // console.log("Sending data:", Object.fromEntries(params));
 
+
+  
+      // Send data to MailChimp
       fetch("https://icloud.us11.list-manage.com/subscribe/post", {
         method: "POST",
-        body: params
-      });
+        body: params,
+      })
+        .then((response) => {
+          if (response.ok) {
+            console.log("Data successfully sent to MailChimp!");
+          } else {
+            console.error("Error sending data to MailChimp:", response);
+          }
+        })
+        .catch((error) => {
+          console.error("Network error:", error);
+        });
     }
   }
+
+  const handleTextChange = (newText: string) => {
+    setSubmitText(newText);
+  };
 
   return <div>
     <div className="min-h-screen flex flex-col bg-customBlack items-center text-gray-300 pb-3 pt-6 px-4">
@@ -77,7 +123,7 @@ export default function Contact() {
     </div>
     
     {/* Contact Form */}
-    <div className="bg-zinc-800 rounded-3xl p-6 w-full md:w-1/2 space-y-6">
+    <form onSubmit={submitHandler} className="bg-zinc-800 rounded-3xl p-6 w-full md:w-1/2 space-y-6">
       <div>
         <label htmlFor="name" className="text-zinc-400">Your name</label>
         <input id="name" type="text" name="subject" required value={subject} onChange={e => setSubject(e.target.value)} className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1" />
@@ -95,11 +141,36 @@ export default function Contact() {
 
       <div className="pb-20">
         <label htmlFor="message" className="text-zinc-400">How Do You Want to Get Involved?</label>
-        <InvolvementCheckboxes flags={flags} setFlags={setFlagsHandler} />
-      </div>
+        {/* <InvolvementCheckboxes flags={flags} setFlags={setFlagsHandler} /> */}
+        <div>
+          <input id="film-prod" type="checkbox" value={filmProd} onChange={e => setFilmProd(e.target.checked)}/>
+          <label htmlFor="film-prod">Film Production</label>
+        </div>
+        <div>
+          <input id="performing" type="checkbox" value={performing} onChange={e => setPerforming(e.target.checked)} />
+          <label htmlFor="performing">Performing</label>
+        </div>
+        <div>
+          <input id="social-media" value={socialMedia} type="checkbox" onChange={e => setSocialMedia(e.target.checked)} />
+          <label htmlFor="social-media">Social Media</label>
+        </div>
+        <div>
+          <input id="music" type="checkbox" value={music} onChange={e => setMusic(e.target.checked)} />
+          <label htmlFor="music">Music</label>
+        </div>
+        <div>
+          <input id="support" type="checkbox" value={support} onChange={e => setSupport(e.target.checked)} />
+          <label htmlFor="support">Support</label>
+        </div>
+        <div>
+          <input id="other" type="checkbox" value={other} onChange={e => setOther(e.target.checked)} />
+          <label htmlFor="other">Other</label>
+        </div>
+        
+        </div>
 
-      <button className="w-full bg-zinc-700 text-white font-semibold py-2 rounded-3xl hover:bg-zinc-600 transition">Get involved</button>
-    </div>
+      <button type="submit" onClick={() => handleTextChange("This form has been submitted!")} value="Send" className="w-full bg-zinc-700 text-white font-semibold py-2 rounded-3xl hover:bg-zinc-600 transition" >{submitText}</button>
+    </form>
     
   </div>
   </div>
