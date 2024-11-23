@@ -22,7 +22,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 10vh;
+    padding-top: 55vh;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 10vh;
@@ -34,15 +34,19 @@
     animation-fill-mode: forwards;
 }
 
+/* try editing the font size so that it scales with the screen nicely,
+prob want to scale with screen height or screen width, kind of unsure yet.
+lowk one idea would be maybe try multiplying screen height and screen width
+so you could scale with screen area? this goes for both links and logo*/
 .navbar-logo {
 	margin: 0, auto;
     font-size: 1.2rem;
     color: #ffffff;
-    padding-top: 2.5vh;
+    padding-top: 2vh;
     padding-bottom: 5vh;
     text-decoration: none;
     letter-spacing: 2px;
-    text-align: center;
+    text-align: left;
 }
 
 .menu {
@@ -52,8 +56,8 @@
 }
 
 .instagram-logo {
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 2rem;
+	height: 2rem;
 	margin-bottom: 1rem;
 }
 
@@ -61,7 +65,7 @@
 	align-self: left;
     color: #ffffff;
     text-decoration: none;
-    padding: 1rem 0.25rem;
+    padding: 0.5rem 0.25rem;
     /*margin: 0 0.5rem;*/
     transition: color 0.3s ease;
 }

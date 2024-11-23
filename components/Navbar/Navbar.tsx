@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-import { createBucketClient } from '@cosmicjs/sdk'
+import { createBucketClient } from '@cosmicjs/sdk';
+import React from 'react';
 
 
 const routes = [
@@ -17,46 +18,13 @@ const routes = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [logoData, setLogoData] = useState(null);
-
-  useEffect(() => {
-    // Fetch logo data when the component mounts
-    const fetchLogoData = async () => {
-      const query = {
-        type: "instagram-logo",
-        slug: "instagram-logo",
-      };
-      
-      try {
-        const cosmic = createBucketClient({
-            bucketSlug: 'soul-sisters-production-c52519c0-9a32-11ef-9152-c3825c893765',
-            readKey: 'toT4sKELwi3M0xzs4s9DXwNnWV1X64ACd8662cbH1cjMEGV79W'
-          })
-        let response = await cosmic.objects.findOne({
-            type: "instagram-logo",
-            slug: "instagram-logo"
-          }).props("slug,title,metadata,type")
-          .depth(1)
-        console.log("API response:", response);  // Check this output in the console
-        console.log("API response url:", response.object.metadata.instagram_logo.url);
-        // Set the fetched data to state
-        setLogoData(response.object.metadata.instagram_logo.url);
-      } catch (error) {
-        console.error("Error fetching logo data:", error);
-      }
-    };
-
-    fetchLogoData();
-  }, []);
-    
   return (
         <nav className={styles.navbar}>
             <div className={styles["navbar-container"]}>
                 <div className={styles.menu}>
-                    {logoData && (
-                        <img src={logoData} 
+                        <img src="/Instagram_Glyph_White.png" 
                         alt="Instagram Logo" 
-                        className={styles["instagram-logo"]} />)}
+                        className={styles["instagram-logo"]} />
                     {routes.map((route) => (
                         <Link
                             key={route.href}

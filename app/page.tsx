@@ -1,4 +1,5 @@
 import cosmic from "../lib/cosmicClient";
+import React from 'react';
 
 export default async function Home() {
   const query = {
@@ -19,6 +20,10 @@ export default async function Home() {
         muted
         loop
         playsInline
+        style={{
+          height: "100vh",
+          objectFit: "cover"
+        }}
       />
     </div>
   );
