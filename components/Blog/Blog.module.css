@@ -1,0 +1,56 @@
+/* Blog.module.css */
+
+.blogContainer {
+    width: 80vw; /* 80% of the viewport width */
+    min-height: 70vh; /* 70% of the viewport height */
+    margin: 5vh auto; /* Centering and adding equal top/bottom margins */
+    /* border: 2px solid #ddd; */
+    border-radius: 20px;
+    padding: 2rem;
+    background-color: #5a5656;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.blogHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.blogTitle {
+    font-size: 2vw; /* Scales with viewport width */
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.blogDate {
+    font-size: 1vw; /* Scales with viewport width */
+    color: #ffffff;
+}
+
+.blogContent {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    height: 100%;
+    color: #ffffff;
+}
+
+.blogImage {
+    width: 35%; /* Adjust as needed for image ratio */
+    max-height: 50vh;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.blogDescription {
+    font-size: 1.2vw; /* Responsive font size */
+    color: #c5c0c0;
+    flex-grow: 1;
+    overflow-y: auto;
+}

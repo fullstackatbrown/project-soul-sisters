@@ -1,0 +1,48 @@
+.teamContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.teamTitle {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff; /* Ensure the text color is set */
+}
+
+.teamMembers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center; /* Center the grid items */
+  width: 50%;
+}
+
+.teamMember {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #212222;
+  padding: 2rem;
+  text-align: left;
+  border-radius: 1rem;
+  color: #fff;
+  width: 100%; /* Ensure it takes full width of the grid column */
+}
+
+.memberPhoto {
+  width: 150px;
+  height: 150px;
+  margin-left: 20px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.memberLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
