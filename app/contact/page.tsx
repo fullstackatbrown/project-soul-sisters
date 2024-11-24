@@ -157,27 +157,27 @@ export default function Contact() {
         {/* <InvolvementCheckboxes flags={flags} setFlags={setFlagsHandler} /> */}
         <div>
           <input id="film-prod" type="checkbox" value={filmProd} onChange={e => setFilmProd(e.target.checked)}/>
-          <label htmlFor="film-prod">Film Production</label>
+          <label htmlFor="film-prod"> Film Production</label>
         </div>
         <div>
           <input id="performing" type="checkbox" value={performing} onChange={e => setPerforming(e.target.checked)} />
-          <label htmlFor="performing">Performing</label>
+          <label htmlFor="performing"> Performing</label>
         </div>
         <div>
           <input id="social-media" value={socialMedia} type="checkbox" onChange={e => setSocialMedia(e.target.checked)} />
-          <label htmlFor="social-media">Social Media</label>
+          <label htmlFor="social-media"> Social Media</label>
         </div>
         <div>
           <input id="music" type="checkbox" value={music} onChange={e => setMusic(e.target.checked)} />
-          <label htmlFor="music">Music</label>
+          <label htmlFor="music"> Music</label>
         </div>
         <div>
           <input id="support" type="checkbox" value={support} onChange={e => setSupport(e.target.checked)} />
-          <label htmlFor="support">Support</label>
+          <label htmlFor="support"> Support</label>
         </div>
         <div>
           <input id="other" type="checkbox" value={other} onChange={e => setOther(e.target.checked)} />
-          <label htmlFor="other">Other</label>
+          <label htmlFor="other"> Other</label>
         </div>
         
         </div>
