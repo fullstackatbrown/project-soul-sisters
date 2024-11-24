@@ -8,7 +8,7 @@ const routes = [
   { href: "/about", label: "About" },
   { href: "/news", label: "News" },
   { href: "/contact", label: "Contact" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/gallery", label: "Gallerys" },
   { href: "/donate", label: "Donate" },
 ];
 

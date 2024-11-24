@@ -29,3 +29,10 @@ body {
     text-wrap: balance;
   }
 }
+
+.black-background {
+  background-color: black;
+  color: white;
+  min-height: 100vh; /* Ensures it fills the viewport height */
+}
+

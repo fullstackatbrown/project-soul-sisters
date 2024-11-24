@@ -12,13 +12,17 @@ export default async function Home() {
   // console.log("Fetched data:", JSON.stringify(data, null, 2));
   // console.log("Metadata:", data);
   return (
-    <div>
+    <div className = "black-background">
       <video
         src={response.object.metadata.video.url}
-        autoPlay
+        autoPlay  
         loop
         playsInline
       />
+      <p className="text-balance mt-4 text-center px-4 dark:text-gray-300">
+        Welcome to our homepage! This is a placeholder blurb describing the content 
+        or purpose of the video. Stay tuned for more updates.
+      </p>
     </div>
   );
 }

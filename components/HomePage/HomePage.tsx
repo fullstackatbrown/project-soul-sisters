@@ -1,7 +1,7 @@
 import styles from './HomePage.module.css'
 
 export default function HomePage() {
-    const testVidSrc = (): string => {
+    const testVidSrc ``= (): string => {
         return 'https://videos.pexels.com/video-files/1943483/1943483-uhd_2560_1440_25fps.mp4';
     }
     return (
