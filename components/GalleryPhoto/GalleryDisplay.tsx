@@ -6,7 +6,7 @@ import Masonry, {ResponsiveMasonry} from "react-responsive-masonry";
 
 // padding, center, prob 3 columns
 
-export default function GalleryDisplay(props) {
+export default function GalleryDisplay(props: { urls: { media: any[]; }; }) {
   const [photos, setPhotos] = useState([
     {
       "caption": "a placeholder image to display for you, does the text wrap around like it's supposed to?", 
@@ -29,7 +29,7 @@ export default function GalleryDisplay(props) {
             >
                 <Masonry gutter="5px">
                     {props.urls.media.map((x, i) =>
-        <GalleryPhoto url={x.url} /*caption={x.caption}*/ key={x.name}/> 
+        <GalleryPhoto url={x.url} /*caption={x.caption}*/ key={x.name} caption={undefined}/> 
         )}
                 </Masonry>
             </ResponsiveMasonry>
