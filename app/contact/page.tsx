@@ -156,27 +156,27 @@ export default function Contact() {
         <label htmlFor="message" className="text-zinc-400">How Do You Want to Get Involved?</label>
         {/* <InvolvementCheckboxes flags={flags} setFlags={setFlagsHandler} /> */}
         <div>
-          <input id="film-prod" type="checkbox" value={filmProd} onChange={e => setFilmProd(e.target.checked)}/>
+          <input id="film-prod" type="checkbox" checked={filmProd} onChange={e => setFilmProd(e.target.checked)}/>
           <label htmlFor="film-prod">Film Production</label>
         </div>
         <div>
-          <input id="performing" type="checkbox" value={performing} onChange={e => setPerforming(e.target.checked)} />
+          <input id="performing" type="checkbox" checked={performing} onChange={e => setPerforming(e.target.checked)} />
           <label htmlFor="performing">Performing</label>
         </div>
         <div>
-          <input id="social-media" value={socialMedia} type="checkbox" onChange={e => setSocialMedia(e.target.checked)} />
+          <input id="social-media" checked={socialMedia} type="checkbox" onChange={e => setSocialMedia(e.target.checked)} />
           <label htmlFor="social-media">Social Media</label>
         </div>
         <div>
-          <input id="music" type="checkbox" value={music} onChange={e => setMusic(e.target.checked)} />
+          <input id="music" type="checkbox" checked={music} onChange={e => setMusic(e.target.checked)} />
           <label htmlFor="music">Music</label>
         </div>
         <div>
-          <input id="support" type="checkbox" value={support} onChange={e => setSupport(e.target.checked)} />
+          <input id="support" type="checkbox" checked={support} onChange={e => setSupport(e.target.checked)} />
           <label htmlFor="support">Support</label>
         </div>
         <div>
-          <input id="other" type="checkbox" value={other} onChange={e => setOther(e.target.checked)} />
+          <input id="other" type="checkbox" checked={other} onChange={e => setOther(e.target.checked)} />
           <label htmlFor="other">Other</label>
         </div>
         
