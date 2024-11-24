@@ -13,7 +13,7 @@ export default async function Home() {
   // console.log("Fetched data:", JSON.stringify(data, null, 2));
   // console.log("Metadata:", data);
   return (
-    <div>
+    <div style={{paddingRight: "24px"}}>
       <video
         src={response.object.metadata.video.url}
         autoPlay
