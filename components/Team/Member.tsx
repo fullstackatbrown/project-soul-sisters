@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Team.module.css";
 import { Starname } from "./Team";
+import Image from "next/image";
 
 interface MemberProps {
   role: string;
@@ -29,7 +30,7 @@ export default function Member(props: MemberProps) {
           </>
         )}
       </div>
-      <img src={props.imageUrl} className={styles.memberPhoto} />
+      <Image src={props.imageUrl} alt="test" width={1000} height={1000} className={styles.memberPhoto} />
     </div>
   );
 }

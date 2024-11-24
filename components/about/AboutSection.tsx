@@ -1,4 +1,5 @@
 import cosmic from "@/lib/cosmicClient";
+import Image from "next/image";
 
 export default async function AboutSection() {
     const aboutData = await cosmic.objects
@@ -11,7 +12,7 @@ export default async function AboutSection() {
 
   const { title, metadata } = aboutData?.object || {};
   const description = metadata?.["content_of_box"] || "Default description";
-  const image = metadata?.image?.imgix_url || "/default-image.jpg";
+  const image = metadata?.image?.url || "/default-image.jpg";
     return (
         <div className="bg-black text-white min-h-screen w-full flex flex-col items-center p-10 space-y-10">
             <div style={{ marginLeft: '10%', marginRight: '10%', marginTop: '10%'}}>
@@ -22,8 +23,10 @@ export default async function AboutSection() {
                         <p className="text-gray-200 leading-relaxed">{description}</p>
                     </div>
                     {/* Right Column */}
-                    <div className="w-full md:w-2/5">
-                        <img src={image} alt="film-picture" className="object-cover w-full h-full rounded-lg shadow-lg" style={{ height: '100%' }}/>
+                    <div className="w-full md:w-2/5" style={{position: "relative"}}>
+                        <Image src={image} alt="film-picture" fill className="object-cover w-full h-full rounded-lg shadow-lg" style={{ height: '100%' }} placeholder="blur" 
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAADAAIDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAaEAACAgMAAAAAAAAAAAAAAAAAAgEDEiIx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AkHsfNtp6AC0f/9k="
+                        />
                     </div>
                 </section>
             </div>
