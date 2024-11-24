@@ -22,7 +22,7 @@ body {
   & > div {
     flex-grow: 1;
   }
-  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 @layer utilities {
