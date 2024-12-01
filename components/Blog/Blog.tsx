@@ -1,4 +1,5 @@
 import styles from './Blog.module.css';
+import Image from 'next/image';
 
 interface BlogProps {
     title: string;
@@ -15,7 +16,7 @@ export default function Blog({ title, imageUrl, description, date }: BlogProps) 
                 <span className={styles.blogDate}>{date}</span>
             </div>
             <div className={styles.blogContent}>
-                <img src={imageUrl} alt={title} className={styles.blogImage} />
+                {imageUrl ? <Image width={400} height={400} src={imageUrl} alt={title} className={styles.blogImage} /> : <></>}
                 <p className={styles.blogDescription}>{description}</p>
             </div>
         </div>

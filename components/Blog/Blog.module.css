@@ -2,9 +2,9 @@
 
 .blogContainer {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     /* min-height: 70vh; */
-    max-height: 70vh; 
+    /* max-height: 70vh;  */
     /* margin: 5vh; Centering and adding equal top/bottom margins */
     margin-top: 5vh;
     margin-bottom: 5vh;
@@ -42,7 +42,7 @@
 }
 
 .blogContent {
-    font-size: 1.625vw; 
+    font-size: 1.625rem; 
     display: flex;
     flex-direction: row;
     gap: 4vw;
@@ -64,8 +64,6 @@
 }
 
 .blogDescription {
-    font-size: 1.625vw; /* Responsive font size */
-    color: #969292;
     flex-grow: 1;
     overflow-y: auto;
 }
@@ -91,6 +89,8 @@
     }
 
     .blogImage {
+        width: 36%;
+        aspect-ratio: 1 / 1;
         max-width: 100%;
         max-height: 100%;
         align-items: center;
