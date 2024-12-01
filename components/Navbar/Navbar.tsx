@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-import { createBucketClient } from '@cosmicjs/sdk';
 import React from 'react';
 
 
