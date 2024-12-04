@@ -1,20 +1,20 @@
-import styles from './GalleryPhoto.module.css'; 
-import { useState } from 'react';
-
-export default function GalleryPhoto(props) {
-	const [showModal, setShowModal] = useState(false);
+import Image from 'next/image';
+import styles from './GalleryPhoto.module.css';
+// lazy load the photos, scroll, import from google drive
+export default function GalleryPhoto(props: { url: string; caption: string | undefined; width: number; height: number }) {
 	return (
-		<div>
-		<img src={props.url} className={styles["gallery-photo"]} onClick={() => setShowModal(true)}></img>
-		{showModal ? (
-			<div className="justify-center items-center flex fixed outline-none inset-0">
-            <div className="relative w-auto my-6 mx-auto max-w-4xl">
-              <div className="border-0 shadow-lg relative flex flex-col w-full outline-none">
-                <img src={props.url} className="w-full" onClick={() => setShowModal(false)}></img>
-              </div>
-            </div>
-          </div>
-			) : null}
+		<div className={styles["photo-container"]}>
+			<Image src={props.url}
+				className={styles["gallery-photo"]}
+				alt=""
+				width={props.width}
+				height={props.height}
+				quality={50}
+			></Image>
+			<div className={styles["photo-caption"]}>
+				{props.caption}
+			</div>
 		</div>
+
 	)
 }

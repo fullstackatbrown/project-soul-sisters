@@ -1,4 +1,5 @@
 import cosmic from "@/lib/cosmicClient";
+import Image from "next/image";
 
 export default async function AboutSection() {
     const aboutData = await cosmic.objects
