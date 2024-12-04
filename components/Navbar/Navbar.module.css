@@ -1,7 +1,6 @@
 .navbar {
     background-color: #1a1a1a;
     color: #ffffff;
-    font-family: 'Arial', sans-serif;
 }
 
 @keyframes fadeInAnimation {
@@ -23,7 +22,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 2rem;
-    width: 12rem;
+    width: 12.5rem;
     height: 100vh;
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
@@ -37,6 +36,7 @@ so you could scale with screen area? this goes for both links and logo*/
 .navbar-logo {
 	margin: 0;
     margin-top: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.2rem;
     color: #ffffff;
     text-decoration: none;

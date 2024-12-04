@@ -14,7 +14,6 @@
 
 .newsTitle {
     font-size: 3.5vw; /* Scales with viewport width for responsiveness */
-    font-weight: bold;
     color: #ffffff;
     /* padding-left: 5vw;  */
     margin-top: 2vh; /* Adds some space above the title */

@@ -32,7 +32,6 @@
 
 .blogTitle {
     font-size: 2.5vw; /* Scales with viewport width */
-    font-weight: bold;
     color: #ffffff;
 }
 
@@ -42,7 +41,8 @@
 }
 
 .blogContent {
-    font-size: 1.625rem; 
+    font-size: 1.625rem;
+    font-weight: 300;
     display: flex;
     flex-direction: row;
     gap: 4vw;

@@ -18,12 +18,12 @@ export default async function AboutSection() {
             {/* Left Section: Heading + Content */}
             <div style={{ margin: "auto", padding: "16px"}}>
                 <div className="flex flex-col space-y-16 max-w-xl">
-                    <h2 className="text-4xl font-bold text-left mb-4 ml-4">
+                    <h2 className="text-4xl text-left mb-4 ml-4">
                         {title}
                     </h2>
                     <section className="bg-neutral-800 p-12 rounded-lg shadow-md">
                         <div className="flex flex-col w-full space-y-4 p-6" style={{ whiteSpace: 'pre-line' }}>
-                            <p className="text-gray-200 leading-relaxed text-xl">
+                            <p className="text-gray-200 leading-relaxed text-xl font-extralight">
                                 {description}
                             </p>
                         </div>
