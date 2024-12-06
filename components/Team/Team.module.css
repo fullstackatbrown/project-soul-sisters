@@ -1,14 +1,8 @@
 .teamContainer {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
-.teamTitle {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #fff; /* Ensure the text color is set */
+  align-items: center; */
+  margin: 128px 4vw;
 }
 
 .teamMembers {
@@ -45,4 +39,59 @@
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.teamImage {
+  border-radius: 1rem;
+}
+
+.teamTitle {
+  font-size: 2rem;
+  margin-bottom: 64px;
+  color: #fff;
+  padding-left: 8rem;
+}
+
+/* .teamContainer {
+} */
+.teamContent {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  gap: 10rem;
+  padding-left: 8rem;
+  /* paddi */
+  /* align-items: center; */
+}
+
+.teamContent p {
+  color: #959595;
+}
+
+.teamNames {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* .teamNames div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+} */
+
+.teamNames p {
+  padding-top: 0.25rem;
+}
+
+.columnContainer {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+  gap: 1rem; /* Add spacing between items */
+}
+
+.columnContainer p {
+  margin: 0; /* Remove default margin for cleaner alignment */
 }
