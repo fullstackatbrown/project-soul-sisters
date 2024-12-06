@@ -1,7 +1,7 @@
-import { createBucketClient } from "@cosmicjs/sdk";
+// import { createBucketClient } from "@cosmicjs/sdk";
 import cosmic from "../../lib/cosmicClient";
 import styles from "./Team.module.css";
-import Member from "./Member";
+// import Member from "./Member";
 import Image from "next/image";
 
 export interface Starname {
@@ -10,20 +10,20 @@ export interface Starname {
 
 export default async function Team() {
   try {
-    const data = await cosmic.objects
-      .find({
-        type: "team-members",
-      })
-      .props("slug,title,metadata")
-      .depth(1);
+    // const data = await cosmic.objects
+    //   .find({
+    //     type: "team-members",
+    //   })
+    //   .props("slug,title,metadata")
+    //   .depth(1);
 
-    const starring = await cosmic.objects
-      .findOne({
-        type: "starring",
-        slug: "starring-members",
-      })
-      .props("slug,title,metadata,type")
-      .depth(1);
+    // const starring = await cosmic.objects
+    //   .findOne({
+    //     type: "starring",
+    //     slug: "starring-members",
+    //   })
+    //   .props("slug,title,metadata,type")
+    //   .depth(1);
 
     const aboutPage = await cosmic.objects
       .findOne({
@@ -37,7 +37,7 @@ export default async function Team() {
       aboutPage?.object?.metadata?.production_team_image?.url;
     console.log(production_team_image_url);
 
-    console.log(starring);
+    // console.log(starring);
 
     return (
       <div className={styles.teamContainer}>
@@ -50,6 +50,7 @@ export default async function Team() {
               width={375}
               height={562.5}
               className={styles.teamImage}
+              loading="eager"
             />
           )}
 

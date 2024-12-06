@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 import React from 'react';
-
+import Image from "next/image";
 
 const routes = [
   { href: "/about", label: "About" },
@@ -19,9 +19,13 @@ export default function Navbar() {
         <nav className={styles.navbar}>
             <div className={styles["navbar-container"]}>
                 <div className={styles.menu}>
-                        <img src="/Instagram_Glyph_White.png" 
+                        <Image src="/Instagram_Glyph_White.png" 
                         alt="Instagram Logo" 
-                        className={styles["instagram-logo"]} />
+                        className={styles["instagram-logo"]} 
+                        width={100}
+                        height={100}
+                        loading="eager"
+                        />
                     {routes.map((route) => (
                         <Link
                             key={route.href}
