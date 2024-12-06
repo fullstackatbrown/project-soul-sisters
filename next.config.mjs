@@ -7,6 +7,11 @@ const nextConfig = {
           hostname: 'cdn.cosmicjs.com',
           port: '',
         },
+        {
+          protocol: 'https',
+          hostname: 'imgix.cosmicjs.com',
+          port: '',
+        },
       ],
     },
   }

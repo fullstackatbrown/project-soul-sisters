@@ -1,6 +1,7 @@
 import Blog from '@/components/Blog/Blog';
 import styles from './page.module.css';
 import cosmic from '@/lib/cosmicClient';
+import { Suspense } from 'react';
 
 export default async function NewsPage() {
     const query = {
@@ -11,6 +12,7 @@ export default async function NewsPage() {
         .props("title,metadata");
 
     return (
+        <Suspense fallback={<div></div>}>
         <div className={styles.newsPage}>
             <h1 className={styles.newsTitle}>News</h1>
             <div className={styles.newsList}>
@@ -25,5 +27,6 @@ export default async function NewsPage() {
                 ))}
             </div>
         </div>
+        </Suspense>
     );
 }

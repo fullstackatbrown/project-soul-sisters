@@ -12,7 +12,7 @@ export default function GalleryDisplay(props: { urls: { media: any[]; }; }) {
       >
         <Masonry gutter="20px">
           {props.urls.media.map((x, i) =>
-            <GalleryPhoto url={x.url} key={x.name} caption={x.alt_text} width={x.width} height={x.height} />
+            <GalleryPhoto url={`${x.imgix_url}?q=40&auto=format,compress`} key={x.name} caption={x.alt_text} width={x.width} height={x.height} />
           )}
         </Masonry>
       </ResponsiveMasonry>
