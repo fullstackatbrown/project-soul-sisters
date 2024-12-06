@@ -1,12 +1,12 @@
 "use client";
-import GalleryPhoto from "../../components/GalleryPhoto/GalleryPhoto";
+import GalleryPhoto from "./GalleryPhoto";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 // padding, center, prob 3 columns
 
 export default function GalleryDisplay(props: { urls: { media: any[]; }; }) {
   return (
-    <div style={{ margin: "20px" }}>
+    <div style={{ margin: "20px", marginLeft: "0px" }}>
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 700: 1, 1400: 2 }}
       >

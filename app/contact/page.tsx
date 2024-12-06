@@ -83,7 +83,7 @@ export default function Contact() {
   return <div>
     <div className="min-h-screen flex flex-col bg-customBlack items-center text-gray-300 pb-3 pt-6 px-4">
       {/* Header Section */}
-      <h1 className="text-5xl font-semibold text-white mb-2 font-alexandria">Get Involved</h1>
+      <h1 className="text-5xl font-semibold text-white mb-2">Get Involved</h1>
       <p className="text-center text-gray-400 max-w-xl">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       </p>

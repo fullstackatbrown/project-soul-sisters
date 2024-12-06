@@ -13,11 +13,10 @@ export default async function Home() {
   // console.log("Fetched data:", JSON.stringify(data, null, 2));
   // console.log("Metadata:", data);
   return (
-    <div style={{paddingRight: "24px"}}>
+    <div style={{paddingRight: "24px", background: "black"}}>
       <video
         src={response.object.metadata.video.url}
         autoPlay
-        muted
         loop
         playsInline
         style={{

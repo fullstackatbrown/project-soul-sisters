@@ -9,7 +9,7 @@ export default async function Gallery() {
     .props("url,name,alt_text,width,height")
 
   return (
-    <div>
+    <div style={{background: "black"}}>
       <GalleryDisplay urls={vals} />
     </div>
   );
