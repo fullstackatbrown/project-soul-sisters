@@ -61,15 +61,13 @@ export default function Contact() {
 
     // Send data to MailChimp
     fetch("https://icloud.us11.list-manage.com/subscribe/post", {
+      mode: "no-cors",
       method: "POST",
       body: params,
     })
       .then((response) => {
-        if (response.ok) {
-          console.log("Data successfully sent to MailChimp!");
-        } else {
-          console.error("Error sending data to MailChimp:", response);
-        }
+        setSubmitText("This form has been submitted!")
+        console.log()
       })
       .catch((error) => {
         console.error("Network error:", error);
@@ -120,17 +118,17 @@ export default function Contact() {
               <form onSubmit={submitHandler} className="bg-zinc-800 rounded-3xl p-6 w-full md:w-1/2 space-y-6">
                 <div>
                   <label htmlFor="name" className="text-zinc-400">Your name</label>
-                  <input id="name" type="text" name="subject" required value={subject} onChange={e => setSubject(e.target.value)} className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1" />
+                  <input id="name" type="text" name="subject" required onBlur={e => setSubject(e.target.value)} className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1" />
                 </div>
                 <div>
                   <label htmlFor="email" className="text-zinc-400">Your email</label>
-                  <input id="email" type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1" />
+                  <input id="email" type="email" name="email" required onBlur={e => setEmail(e.target.value)} className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1" />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="text-zinc-400">Tell us more about yourself</label>
                   <textarea name="body"
-                    value={body} onChange={e => setBody(e.target.value)} id="message" className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1"></textarea>
+                    onBlur={e => setBody(e.target.value)} id="message" className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1"></textarea>
                 </div>
 
                 <div className="pb-20">
@@ -162,7 +160,7 @@ export default function Contact() {
 
                 </div>
 
-                <button type="submit" onClick={() => handleTextChange("This form has been submitted!")} value="Send" className="w-full bg-zinc-700 text-white font-semibold py-2 rounded-3xl hover:bg-zinc-600 transition" >{submitText}</button>
+                <button type="submit" value="Send" className="w-full bg-zinc-700 text-white font-semibold py-2 rounded-3xl hover:bg-zinc-600 transition" >{submitText}</button>
               </form>
 
             </div>
