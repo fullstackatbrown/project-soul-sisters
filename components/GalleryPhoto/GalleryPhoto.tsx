@@ -16,10 +16,9 @@ export default function GalleryPhoto(props: { url: string; caption: string | und
 				style={{borderRadius: "16px"}}
 				loading='eager'
 			></Image>
-			{/* <div className={styles["photo-caption"]}>
+			<div className={styles["photo-caption"]}>
 				{props.caption}
-			</div> */}
+			</div>
 		</div>
-
 	)
 }
