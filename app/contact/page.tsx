@@ -65,7 +65,7 @@ export default function Contact() {
       method: "POST",
       body: params,
     })
-      .then((response) => {
+      .then(() => {
         setSubmitText("This form has been submitted!")
         console.log()
       })
@@ -73,10 +73,6 @@ export default function Contact() {
         console.error("Network error:", error);
       });
   }
-
-  const handleTextChange = (newText: string) => {
-    setSubmitText(newText);
-  };
 
   return (
     <Suspense fallback={<div></div>}>
