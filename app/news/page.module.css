@@ -7,17 +7,17 @@
     scroll-snap-type: y mandatory;
     /* padding-left: 10vw;
     padding-right: 10vw; */
-    padding: 6vh 6vw;
+    padding: 6rem;
     /* overflow-x: hidden; */
 }
 
 .newsTitle {
-    font-size: 3.5vw; /* Scales with viewport width for responsiveness */
+    font-size: 3rem; /* Scales with viewport width for responsiveness */
     color: #ffffff;
     /* padding-left: 5vw;  */
-    margin-top: 2vh; /* Adds some space above the title */
     text-align: left;
-    margin-bottom: -2vh;
+    margin-bottom: 40px;
+    margin-left: calc((100% - min(100%, 1280px)) / 2);
 }
 
 /* Ensures posts occupy the full width and center-align in the viewport */
@@ -25,19 +25,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1vh;
+    gap: 24px;
     width: 100%;
-
-}
-
-@media (max-width: 768px) {
-    .newsPage {
-        padding: 2vh 5vw;
-    }
-
-    .newsTitle {
-        font-size: 4vw;
-        margin-bottom: 0;
-    }
 
 }

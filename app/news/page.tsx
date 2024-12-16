@@ -11,17 +11,21 @@ export default async function NewsPage() {
         .find(query)
         .props("title,metadata");
 
+    console.log(JSON.stringify(response));
+
     return (
         <Suspense fallback={<div></div>}>
             <div className={styles.newsPage}>
                 <h1 className={styles.newsTitle}>News</h1>
                 <div className={styles.newsList}>
-                    {response.objects.map((post: { title: string; metadata: { date: string; image: { url: string; }; content: string; }; }, index: number) => (
+                    {response.objects.map((post: { title: string; metadata: { date: string; image: { url: string; }; video: { url: string; }; "youtube-video": string; content: string; }; }, index: number) => (
                         <Blog
                             key={index}
                             title={post.title}
                             date={post.metadata.date}
                             imageUrl={post.metadata?.image?.url}
+                            videoUrl={post.metadata?.video?.url}
+                            ytUrl={post.metadata?.["youtube-video"]}
                             description={post.metadata.content}
                         />
                     ))}

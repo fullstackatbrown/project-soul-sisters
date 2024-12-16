@@ -4,11 +4,16 @@ import Image from 'next/image';
 interface BlogProps {
     title: string;
     imageUrl: string;
+    videoUrl: string;
+    ytUrl: string;
     description: string;
     date: string;
 }
 
-export default function Blog({ title, imageUrl, description, date }: BlogProps) {
+export default function Blog({ title, imageUrl, videoUrl, ytUrl, description, date }: BlogProps) {
+    const ytRegex = /(?:https?:\/\/)?(?:www.)?(?:youtube\.com|youtu\.be|youtube-nocookie\.com)\/(?:embed\/|v\/|watch\?v=|watch\?list=.*&v=)?((?:\w|-){11})(?:&list=(?:\w+)&?)?/;
+    const matches = ytUrl?.match(ytRegex) || ["no match"];
+    console.log(matches);
     return (
         <div className={styles.blogContainer}>
             <div className={styles.blogHeader}>
@@ -16,7 +21,9 @@ export default function Blog({ title, imageUrl, description, date }: BlogProps) 
                 <span className={styles.blogDate}>{date}</span>
             </div>
             <div className={styles.blogContent}>
-                {imageUrl ? <Image width={400} height={400} src={imageUrl} alt={title} className={styles.blogImage} /> : <></>}
+                {imageUrl ? <Image width={400} height={400} src={imageUrl} alt={title} className={styles.blogImage} /> :
+                    videoUrl ? <video width={400} height={400} src={videoUrl} controls className={styles.blogImage} /> :
+                        ytUrl && matches.length > 1 ? <iframe width={400} height={400} src={`https://youtube.com/embed/${matches[1]}`} allow="fullscreen" className={styles.blogImage}></iframe> : <></>}
                 <p className={styles.blogDescription}>{description}</p>
             </div>
         </div>

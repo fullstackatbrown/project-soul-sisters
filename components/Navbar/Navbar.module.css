@@ -54,6 +54,7 @@ so you could scale with screen area? this goes for both links and logo*/
     height: 2rem;
     margin-bottom: 1rem;
     margin-left: 0.5rem;
+    transition: all 0.3s ease;
 }
 
 .instagram-logo:hover {

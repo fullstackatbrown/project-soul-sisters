@@ -6,25 +6,27 @@ import styles from "./Navbar.module.css";
 import Image from "next/image";
 
 const routes = [
-  { href: "/about", label: "About" },
-  { href: "/news", label: "News" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/contact", label: "Contact Us" },
+    { href: "/about", label: "About" },
+    { href: "/news", label: "News" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
-  return (
+    const pathname = usePathname();
+    return (
         <nav className={styles.navbar}>
             <div className={styles["navbar-container"]}>
                 <div className={styles.menu}>
-                        <Image src="/Instagram_Glyph_White.png" 
-                        alt="Instagram Logo" 
-                        className={styles["instagram-logo"]} 
-                        width={100}
-                        height={100}
-                        loading="eager"
+                    <a href="https://www.instagram.com/soul_sisters2025/" target="_blank" rel="noreferrer noopener">
+                        <Image src="/Instagram_Glyph_White.png"
+                            alt="Instagram Logo"
+                            className={styles["instagram-logo"]}
+                            width={100}
+                            height={100}
+                            loading="eager"
                         />
+                    </a>
                     {routes.map((route) => (
                         <Link
                             key={route.href}
@@ -38,7 +40,7 @@ export default function Navbar() {
                 <Link href="/" className={styles["navbar-logo"]}>
                     Soul Sisters
                 </Link>
-                
+
             </div>
         </nav>
     );
