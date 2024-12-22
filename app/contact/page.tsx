@@ -96,7 +96,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center space-x-3 pt-8 pb-8">
                   <FaEnvelope className="text-white" />
-                  <a href="mailto:pshulman@gmail.com"><span>pshulman@gmail.com</span></a>
+                  <a href="mailto:pemshulman@gmail.com"><span>pemshulman@gmail.com</span></a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <FaMapMarkerAlt className="text-white" />
