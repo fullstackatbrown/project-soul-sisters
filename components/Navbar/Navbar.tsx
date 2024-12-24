@@ -28,30 +28,6 @@ export default function Navbar() {
             </button>
             <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''}`}>
                 <div className={styles["navbar-container"]}>
-                    {/* <div className={styles.menu}>
-                    <a href="https://www.instagram.com/soul_sisters2025/" target="_blank" rel="noreferrer noopener">
-                        <Image src="/Instagram_Glyph_White.png"
-                            alt="Instagram Logo"
-                            className={styles["instagram-logo"]}
-                            width={100}
-                            height={100}
-                            loading="eager"
-                        />
-                    </a>
-                    {routes.map((route) => (
-                        <Link
-                            key={route.href}
-                            href={route.href}
-                            className={`${styles["nav-link"]} ${styles[pathname === route.href ? "active" : ""]}`}
-                        >
-                            {route.label}
-                        </Link>
-                    ))}
-                </div>
-                <Link href="/" className={styles["navbar-logo"]}>
-                    Soul Sisters
-                </Link> */}
-                    
                     <div className={styles.menu}>
                         <a href="https://www.instagram.com/soul_sisters2025/" target="_blank" rel="noreferrer noopener">
                             <Image src="/Instagram_Glyph_White.png"
@@ -73,7 +49,7 @@ export default function Navbar() {
                             </Link>
                         ))}
                     </div>
-                    <Link href="/" className={styles["navbar-logo"]}>
+                    <Link href="/" className={styles["navbar-logo"]} onClick={() => setIsMenuOpen(false)}>
                         Soul Sisters
                     </Link>
                 </div>
