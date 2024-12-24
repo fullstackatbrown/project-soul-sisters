@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import {Volume2, VolumeOff} from 'lucide-react';
 
 interface VideoPlayerProps {
     videoUrl: string;
@@ -14,7 +15,7 @@ export default function VideoPlayer({ videoUrl }: VideoPlayerProps) {
     };
 
     return (
-        <div style={{ paddingRight: "24px", background: "black", position: "relative" }}>
+        <div style={{ paddingLeft: "3.2vh", paddingRight: "3.2vh", background: "black", position: "relative" }}>
             <video
                 src={videoUrl}
                 autoPlay
@@ -32,17 +33,17 @@ export default function VideoPlayer({ videoUrl }: VideoPlayerProps) {
                 onClick={toggleMute}
                 style={{
                     position: "absolute",
-                    bottom: "20px",
-                    right: "20px",
-                    padding: "10px",
-                    background: "rgba(0,0,0,0.9)",
+                    bottom: "4vh",
+                    right: "4vh",
+                    // padding: "10px",
+                    // background: "rgba(0,0,0,0.9)",
                     color: "white",
                     border: "none",
                     borderRadius: "8px",
                     cursor: "pointer"
                 }}
             >
-                {isMuted ? "Unmute" : "Mute"}
+                {isMuted ? <VolumeOff size={24} /> : <Volume2 size={24}/>}
             </button>
         </div>
     );

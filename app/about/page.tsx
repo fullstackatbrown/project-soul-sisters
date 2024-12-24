@@ -5,10 +5,10 @@ import { Suspense } from 'react';
 export default function About() {
   return (
     <Suspense fallback={<div></div>}>
-      <div>
+      {/* <div> */}
         <AboutSection />
         {/* <Team /> */}
-      </div>
+      {/* </div> */}
     </Suspense>
   );
 }

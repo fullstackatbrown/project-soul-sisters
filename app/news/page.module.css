@@ -7,17 +7,18 @@
     scroll-snap-type: y mandatory;
     /* padding-left: 10vw;
     padding-right: 10vw; */
-    padding: 6rem;
+    padding: 16px 4vw;
     /* overflow-x: hidden; */
 }
 
 .newsTitle {
-    font-size: 3rem; /* Scales with viewport width for responsiveness */
+    font-size: 3rem;
     color: #ffffff;
     /* padding-left: 5vw;  */
     text-align: left;
-    margin-bottom: 40px;
+    /* margin-bottom: min(40px, 5vh); */
     margin-left: calc((100% - min(100%, 1280px)) / 2);
+    padding: 64px 16px;
 }
 
 /* Ensures posts occupy the full width and center-align in the viewport */

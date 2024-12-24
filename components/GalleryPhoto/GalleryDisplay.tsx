@@ -7,7 +7,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export default function GalleryDisplay(props: { urls: { media: { imgix_url: string, name: string, alt_text: string | undefined, width: number, height: number }[]; }; }) {
   return (
-    <div style={{ margin: "20px", marginLeft: "0px" }}>
+    <div style={{ margin: "20px" }}>
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 700: 1, 1400: 2 }}
       >
