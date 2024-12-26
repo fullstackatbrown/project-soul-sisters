@@ -3,8 +3,19 @@
     flex-direction: row;
 }
 
+.about {
+    padding: min(4.5rem,10%);
+}
+
+.image {
+    align-self: start;
+}
+
 @media (max-width: 1300px) {
     .container {
         flex-direction: column;
+    }
+    .image {
+        align-self: auto;
     }
 }

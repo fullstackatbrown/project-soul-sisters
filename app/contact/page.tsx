@@ -76,15 +76,15 @@ export default function Contact() {
 
   return (
     <Suspense fallback={<div></div>}>
-      <div className="min-h-screen flex flex-col bg-customBlack items-center text-gray-300 pb-3 pt-6 px-4 justify-center">
+      <div className="min-h-screen flex flex-col bg-customBlack items-center text-gray-300 pb-3 pt-6 px-[min(1rem,5%)] justify-center">
         {/* Header Section */}
         <h1 className="text-5xl font-semibold text-white mb-2">Get Involved</h1>
 
-        <div className="bg-neutral-1000 flex items-center justify-center p-5">
-          <div className="bg-neutral-900 rounded-3xl shadow-lg p-8 w-full max-w-6xl flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+        <div className="bg-neutral-1000 w-[min(100%,840px)] flex items-center justify-center p-5 px-0">
+          <div className="bg-neutral-900 rounded-3xl shadow-lg p-[min(2rem,5%)] w-full max-w-6xl flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
 
             {/* Contact Information */}
-            <div className="bg-neutral-800 rounded-3xl p-10 text-gray-300 w-full md:w-1/2">
+            <div className="bg-neutral-800 rounded-3xl p-[min(2.5rem,8%)] text-gray-300 w-full md:w-1/2">
               <h2 className="text-white text-2xl font-semibold mb-4">Contact Information</h2>
               <p className="text-gray-400 mb-6">
                 Reach out to the Soul Sisters team at:
@@ -96,7 +96,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center space-x-3 pt-8 pb-8">
                   <FaEnvelope className="text-white" />
-                  <a href="mailto:pemshulman@gmail.com"><span>pemshulman@gmail.com</span></a>
+                  <a href="mailto:pemshulman@gmail.com"><span className="break-all">pemshulman@gmail.com</span></a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <FaMapMarkerAlt className="text-white" />
@@ -106,7 +106,7 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={submitHandler} className="bg-neutral-800 rounded-3xl p-10 w-full md:w-1/2 space-y-6">
+            <form onSubmit={submitHandler} className="bg-neutral-800 rounded-3xl p-[min(2.5rem,8%)] w-full md:w-1/2 space-y-6">
               <div>
                 <label htmlFor="name" className="text-neutral-400">Your name</label>
                 <input id="name" type="text" name="subject" required onBlur={e => setSubject(e.target.value)} className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1" />
@@ -122,31 +122,31 @@ export default function Contact() {
                   onBlur={e => setBody(e.target.value)} id="message" className="w-full bg-transparent text-white border-b border-gray-500 focus:outline-none focus:border-gray-300 p-2 mt-1"></textarea>
               </div>
 
-              <div className="pb-20">
+              <div>
                 <label htmlFor="message" className="text-neutral-400">How Do You Want to Get Involved?</label>
                 <div>
                   <input id="film-prod" type="checkbox" checked={filmProd} onChange={e => setFilmProd(e.target.checked)} />
-                  <label htmlFor="film-prod">Film Production</label>
+                  <label htmlFor="film-prod" className="px-1">Film Production</label>
                 </div>
                 <div>
                   <input id="performing" type="checkbox" checked={performing} onChange={e => setPerforming(e.target.checked)} />
-                  <label htmlFor="performing">Performing</label>
+                  <label htmlFor="performing" className="px-1">Performing</label>
                 </div>
                 <div>
                   <input id="social-media" checked={socialMedia} type="checkbox" onChange={e => setSocialMedia(e.target.checked)} />
-                  <label htmlFor="social-media">Social Media</label>
+                  <label htmlFor="social-media" className="px-1">Social Media</label>
                 </div>
                 <div>
                   <input id="music" type="checkbox" checked={music} onChange={e => setMusic(e.target.checked)} />
-                  <label htmlFor="music">Music</label>
+                  <label htmlFor="music" className="px-1">Music</label>
                 </div>
                 <div>
                   <input id="support" type="checkbox" checked={support} onChange={e => setSupport(e.target.checked)} />
-                  <label htmlFor="support">Support</label>
+                  <label htmlFor="support" className="px-1">Support</label>
                 </div>
                 <div>
                   <input id="other" type="checkbox" checked={other} onChange={e => setOther(e.target.checked)} />
-                  <label htmlFor="other">Other</label>
+                  <label htmlFor="other" className="px-1">Other</label>
                 </div>
 
               </div>

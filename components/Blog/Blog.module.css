@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     /* padding: 8.4vh 8.3vw; */
-    padding: 80px clamp(80px, 15%, 160px);
+    padding: min(15%, 80px) min(15%, 160px);
 }
 
 .blogHeader {
@@ -25,6 +25,15 @@
     align-items: flex-end;
     margin-bottom: 40px;
     gap: 24px;
+    /* smart word breaking */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 .blogTitle {

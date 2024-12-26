@@ -25,8 +25,8 @@ export default async function AboutSection() {
                     <h2 className="text-5xl text-left mb-4 ml-4 py-16">
                         {title}
                     </h2>
-                    <section className={`rounded-3xl bg-neutral-800 p-12 shadow-md`}>
-                        <div className="flex flex-col w-full space-y-4 p-6" style={{ whiteSpace: 'pre-line' }}>
+                    <section className={`rounded-3xl bg-neutral-800 shadow-md ${styles.about}`}>
+                        <div className="flex flex-col w-full space-y-4" style={{ whiteSpace: 'pre-line' }}>
                             <p className="text-gray-200 leading-relaxed text-xl font-extralight">
                                 {description}
                             </p>
@@ -35,11 +35,11 @@ export default async function AboutSection() {
                 </div>
             </div>
             {/* Right Section: Image (Full Height) */}
-            <div className={`rounded-3xl h-screen justify-self-end`}>
+            <div className={`h-screen sticky top-0 justify-self-end ${styles.image}`}>
                 <Image
                     src={image_url}
                     alt="film-picture"
-                    className="object-cover w-full h-full rounded-lg shadow-lg"
+                    className="object-fill w-full h-full rounded-3xl shadow-lg"
                     width={metadata?.width || 1536}
                     height={metadata?.height || 2304}
                     loading="eager"
