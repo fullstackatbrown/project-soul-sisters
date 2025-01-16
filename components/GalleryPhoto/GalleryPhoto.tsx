@@ -7,9 +7,8 @@ export default function GalleryPhoto(props: { url: string; caption: string | und
 			<Image src={props.url}
 				className={`${styles["gallery-photo"]}`}
 				alt=""
-				width={props.width / 2}
-				height={props.height / 2}
-				quality={1}
+				width={props.width}
+				height={props.height}
 				placeholder="blur"
 				blurDataURL='https://static.wikia.nocookie.net/company-bumpers/images/3/3d/Disneycomingsoontotheaters.JPG/revision/latest/smart/width/250/height/250?cb=20190913032923'
 				style={{borderRadius: "16px"}}
