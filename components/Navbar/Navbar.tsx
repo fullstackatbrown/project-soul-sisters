@@ -29,7 +29,7 @@ export default function Navbar() {
             <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''}`}>
                 <div className={styles["navbar-container"]}>
                     <div className={styles.menu}>
-                        <a href="https://www.instagram.com/soul_sisters2025/" target="_blank" rel="noreferrer noopener">
+                        <a href="https://www.instagram.com/soul_sisters2027/" target="_blank" rel="noreferrer noopener">
                             <Image src="/Instagram_Glyph_White.png"
                                 alt="Instagram Logo"
                                 className={styles["instagram-logo"]}
